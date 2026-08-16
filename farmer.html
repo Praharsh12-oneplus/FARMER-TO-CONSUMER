@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FarmLink Farmer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="farmer">
+    <header class="topbar">
+      <a class="brand" href="farmer.html">
+        <span data-i18n="network">10 km local farm network</span>
+        <strong>FarmLink Farmer</strong>
+      </a>
+      <div class="top-actions">
+        <label class="language-choice">
+          <span data-i18n="language">Language</span>
+          <select class="languageSelect" aria-label="Language">
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+            <option value="mr">मराठी</option>
+          </select>
+        </label>
+        <span class="site-badge" data-i18n="farmerSite">Farmer site</span>
+        <button class="logout-button" type="button" id="resetDataBtn" data-i18n="resetData">Reset data</button>
+        <button class="logout-button" type="button" id="logoutBtn" data-i18n="logout">Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="login-screen">
+        <form class="login-panel" id="loginForm">
+          <p class="eyebrow" data-i18n="farmerLogin">Farmer login</p>
+          <h1 data-i18n="loginTitle">Sign in to FarmLink</h1>
+          <p data-i18n="farmerLoginText">Login to list products, accept orders, manage stock, and receive online payments.</p>
+          <label>
+            <span data-i18n="mobileOrEmail">Mobile or email</span>
+            <input name="identity" required placeholder="farmer@example.com" />
+          </label>
+          <label>
+            <span data-i18n="password">Password</span>
+            <input name="password" required type="password" placeholder="123456" />
+          </label>
+          <button class="primary full" type="submit" data-i18n="login">Login</button>
+          <p class="login-hint" data-i18n="demoLoginHint">Demo login: enter any mobile/email and password.</p>
+        </form>
+      </section>
+
+      <div class="app-shell">
+      <section class="hero farmer-hero">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="farmerEyebrow">Sell directly nearby</p>
+          <h1 data-i18n="farmerTitle">List produce, accept orders, and receive online payments.</h1>
+          <p data-i18n="farmerIntro">Manage products, prices, stock, orders, negotiations, and payment status for consumers within 10 km.</p>
+          <div class="hero-actions">
+            <a class="primary" href="#listing" data-i18n="addProduct">Add Product</a>
+            <a class="secondary" href="#payments" data-i18n="paymentTab">Payment tab</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="location-band">
+        <div>
+          <h2 data-i18n="farmLocation">Farm location</h2>
+          <p data-i18n="farmerRadiusText">Receive orders from consumers inside a 10 km radius.</p>
+        </div>
+        <label>
+          <span data-i18n="area">Area</span>
+          <select id="areaSelect"></select>
+        </label>
+        <div class="radius-meter"><span>0 km</span><div><span></span></div><strong>10 km</strong></div>
+      </section>
+
+      <section class="farmer-grid">
+        <section class="panel" id="listing">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow" data-i18n="farmerSite">Farmer site</p>
+              <h2 data-i18n="addProduct">Add Product</h2>
+            </div>
+          </div>
+          <form id="productForm" class="form-grid">
+            <label>
+              <span data-i18n="productName">Product name</span>
+              <input name="name" required data-i18n-placeholder="productPlaceholder" placeholder="Fresh spinach" />
+            </label>
+            <label>
+              <span data-i18n="productPhoto">Product photo</span>
+              <input name="photo" type="file" accept="image/*" />
+            </label>
+            <label>
+              <span data-i18n="category">Category</span>
+              <select name="category"></select>
+            </label>
+            <label>
+              <span data-i18n="pricePerUnit">Price per unit</span>
+              <input name="price" required type="number" min="1" placeholder="30" />
+            </label>
+            <label>
+              <span data-i18n="unit">Unit</span>
+              <select name="unit"></select>
+            </label>
+            <label>
+              <span data-i18n="stock">Stock</span>
+              <input name="stock" required type="number" min="1" placeholder="50" />
+            </label>
+            <label>
+              <span data-i18n="distanceFromBuyer">Distance from buyer</span>
+              <input name="distance" required type="number" min="1" max="10" value="4" />
+            </label>
+            <button class="primary full" type="submit" data-i18n="listProduct">List product</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow" data-i18n="inventory">Inventory</p>
+              <h2 data-i18n="myProducts">My Products</h2>
+            </div>
+          </div>
+          <div id="farmerProductList" class="product-list"></div>
+        </section>
+      </section>
+
+      <section class="dashboard-grid">
+        <section class="panel" id="orders">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow" data-i18n="orders">Orders</p>
+              <h2 data-i18n="incomingOrders">Incoming Orders</h2>
+            </div>
+          </div>
+          <div id="orderList" class="order-list"></div>
+        </section>
+
+        <section class="panel" id="negotiations">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow" data-i18n="negotiation">Negotiation</p>
+              <h2 data-i18n="negotiationOffers">Negotiation Offers</h2>
+            </div>
+          </div>
+          <div id="negotiationList" class="message-list"></div>
+        </section>
+
+        <section class="panel" id="payments">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow" data-i18n="paymentTab">Payment tab</p>
+              <h2 data-i18n="paymentDashboard">Payment Dashboard</h2>
+            </div>
+            <span class="badge" data-i18n="bankLinked">Bank linked</span>
+          </div>
+          <form id="settlementForm" class="payment-form">
+            <label>
+              <span data-i18n="settlementAccount">Settlement account</span>
+              <input value="Ramesh Farm - HDFC ****2231" />
+            </label>
+            <label>
+              <span data-i18n="upiId">UPI ID</span>
+              <input value="rameshfarm@upi" />
+            </label>
+            <button class="primary full" type="submit" data-i18n="requestSettlement">Request settlement</button>
+          </form>
+        </section>
+      </section>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="shared.js"></script>
+  </body>
+</html>

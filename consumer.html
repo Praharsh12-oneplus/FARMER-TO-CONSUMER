@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FarmLink Consumer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="consumer">
+    <header class="topbar">
+      <a class="brand" href="consumer.html">
+        <span data-i18n="network">10 km local farm network</span>
+        <strong>FarmLink Consumer</strong>
+      </a>
+      <div class="top-actions">
+        <label class="language-choice">
+          <span data-i18n="language">Language</span>
+          <select class="languageSelect" aria-label="Language">
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+            <option value="mr">मराठी</option>
+          </select>
+        </label>
+        <span class="site-badge" data-i18n="consumerSite">Consumer site</span>
+        <button class="logout-button" type="button" id="resetDataBtn" data-i18n="resetData">Reset data</button>
+        <button class="logout-button" type="button" id="logoutBtn" data-i18n="logout">Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="login-screen">
+        <form class="login-panel" id="loginForm">
+          <p class="eyebrow" data-i18n="consumerLogin">Consumer login</p>
+          <h1 data-i18n="loginTitle">Sign in to FarmLink</h1>
+          <p data-i18n="consumerLoginText">Login to search nearby farmers, place orders, negotiate prices, and make payments.</p>
+          <label>
+            <span data-i18n="mobileOrEmail">Mobile or email</span>
+            <input name="identity" required placeholder="consumer@example.com" />
+          </label>
+          <label>
+            <span data-i18n="password">Password</span>
+            <input name="password" required type="password" placeholder="123456" />
+          </label>
+          <button class="primary full" type="submit" data-i18n="login">Login</button>
+          <p class="login-hint" data-i18n="demoLoginHint">Demo login: enter any mobile/email and password.</p>
+        </form>
+      </section>
+
+      <div class="app-shell">
+      <section class="hero consumer-hero">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="consumerEyebrow">Fresh produce near you</p>
+          <h1 data-i18n="consumerTitle">Search, negotiate, order, and pay local farmers.</h1>
+          <p data-i18n="consumerIntro">Find farm products within 10 km, compare prices, send offers, place orders, and complete online payments from one screen.</p>
+          <div class="hero-actions">
+            <a class="primary" href="#market" data-i18n="browseMarket">Browse market</a>
+            <a class="secondary" href="#payment" data-i18n="paymentTab">Payment tab</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="location-band">
+        <div>
+          <h2 data-i18n="yourLocation">Your location</h2>
+          <p data-i18n="radiusText">Showing farmers and products inside a 10 km radius.</p>
+        </div>
+        <label>
+          <span data-i18n="area">Area</span>
+          <select id="areaSelect"></select>
+        </label>
+        <div class="radius-meter"><span>0 km</span><div><span></span></div><strong>10 km</strong></div>
+      </section>
+
+      <section id="market" class="consumer-grid">
+        <aside class="panel filters">
+          <h2 data-i18n="findProducts">Find Products</h2>
+          <label>
+            <span data-i18n="search">Search</span>
+            <input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="Tomato, rice, milk..." />
+          </label>
+          <label>
+            <span data-i18n="category">Category</span>
+            <select id="categorySelect"></select>
+          </label>
+          <label>
+            <span data-i18n="maxDistance">Maximum distance</span>
+            <input id="distanceRange" type="range" min="1" max="10" value="10" />
+            <span id="distanceLabel">10 km</span>
+          </label>
+        </aside>
+
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow" data-i18n="consumerSite">Consumer site</p>
+              <h2 data-i18n="nearbyProducts">Nearby Products</h2>
+            </div>
+            <button class="icon-button" id="refreshBtn" type="button" title="Refresh">R</button>
+          </div>
+          <div id="productList" class="product-list"></div>
+        </section>
+      </section>
+
+      <section class="dashboard-grid">
+        <section class="panel" id="orders">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow" data-i18n="orders">Orders</p>
+              <h2 data-i18n="myOrders">My Orders</h2>
+            </div>
+          </div>
+          <div id="orderList" class="order-list"></div>
+        </section>
+
+        <section class="panel" id="negotiations">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow" data-i18n="negotiation">Negotiation</p>
+              <h2 data-i18n="negotiationOffers">Negotiation Offers</h2>
+            </div>
+          </div>
+          <div id="negotiationList" class="message-list"></div>
+        </section>
+
+        <section class="panel" id="payment">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow" data-i18n="secureCheckout">Secure checkout</p>
+              <h2 data-i18n="onlinePayment">Online Payment</h2>
+            </div>
+            <span class="badge" data-i18n="demoGateway">Demo gateway</span>
+          </div>
+          <div class="payment-tabs" role="tablist">
+            <button class="active" type="button" data-payment-method="upi" data-i18n="upi">UPI</button>
+            <button type="button" data-payment-method="card" data-i18n="card">Card</button>
+            <button type="button" data-payment-method="cod" data-i18n="cod">Cash</button>
+          </div>
+          <form id="paymentForm" class="payment-form">
+            <label>
+              <span data-i18n="payForOrder">Pay for order</span>
+              <select id="paymentOrderSelect"></select>
+            </label>
+            <label class="payment-field" data-method-field="upi">
+              <span data-i18n="upiId">UPI ID</span>
+              <input id="upiInput" placeholder="name@bank" />
+            </label>
+            <label class="payment-field hidden" data-method-field="card">
+              <span data-i18n="cardNumber">Card number</span>
+              <input id="cardInput" inputmode="numeric" placeholder="4242 4242 4242 4242" />
+            </label>
+            <label class="payment-field hidden" data-method-field="cod">
+              <span data-i18n="cashNote">Cash note</span>
+              <input id="cashInput" data-i18n-placeholder="cashPlaceholder" placeholder="Pay when product arrives" />
+            </label>
+            <div class="payment-summary">
+              <span data-i18n="amount">Amount</span>
+              <strong id="paymentAmount">Rs 0</strong>
+            </div>
+            <button class="primary full" type="submit" data-i18n="payNow">Pay now</button>
+          </form>
+        </section>
+      </section>
+      </div>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="shared.js"></script>
+  </body>
+</html>
