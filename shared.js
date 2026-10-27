@@ -56,7 +56,7 @@ const i18n = {
     receivedToday: "Received today",
     pendingAmount: "Pending",
     settlementAccount: "Settlement account",
-    requestSettlement: "Request settlement",
+    requestSettlement: "Save & Request settlement",
     allCategories: "All categories",
     Vegetables: "Vegetables",
     Fruits: "Fruits",
@@ -93,11 +93,11 @@ const i18n = {
     rejected: "Rejected",
     paymentPending: "Payment pending",
     placed: "Placed",
-    noProducts: "No products found within {distance} km.",
+    noProducts: "No products found within {distance} km. When local farmers list products, they will appear here.",
     noOrders: "No orders yet.",
     noAcceptedToday: "No accepted orders today.",
     noPaidToday: "No paid orders today.",
-    noFarmerProducts: "No products listed yet.",
+    noFarmerProducts: "No products listed yet. Use the 'Add Product' form to list your first produce.",
     noNegotiations: "No negotiation offers yet.",
     quantityExceedsStock: "Quantity cannot be more than available stock.",
     orderPlaced: "Order placed and added to checkout.",
@@ -114,16 +114,73 @@ const i18n = {
     orderAccepted: "Order accepted.",
     orderRejected: "Order rejected and stock restored.",
     settlementRequested: "Settlement request sent to bank.",
-    productListed: "Product listed for nearby consumers.",
+    settlementSaved: "Settlement details saved.",
+    productListed: "Product listed successfully for nearby consumers.",
     refreshed: "Nearby products refreshed.",
     active: "active",
     productCount: "{count} listed",
-    chooseOrder: "Choose order"
-    ,Tomatoes: "Tomatoes",
+    chooseOrder: "Choose order",
+    Tomatoes: "Tomatoes",
     BasmatiRice: "Basmati Rice",
     FreshMilk: "Fresh Milk",
     Bananas: "Bananas",
-    Onions: "Onions"
+    Onions: "Onions",
+    Spinach: "Fresh Spinach",
+    Mangoes: "Alphonso Mangoes",
+    Wheat: "Whole Wheat",
+    Pomegranates: "Pomegranates",
+
+    // Auth & Day Rollover keys
+    loginTitle: "Sign in to FarmLink",
+    consumerLogin: "Consumer login",
+    farmerLogin: "Farmer login",
+    consumerLoginText: "Login to search nearby farmers, place orders, negotiate prices, and make payments.",
+    farmerLoginText: "Login to list products, accept orders, manage stock, and receive online payments.",
+    signInTab: "Sign In",
+    signUpTab: "Create Account",
+    emailAddress: "Email address",
+    password: "Password",
+    login: "Sign In",
+    logout: "Logout",
+    resetData: "Clear saved data",
+    switchUser: "Switch account",
+    farmerSignUp: "Farmer Registration",
+    consumerSignUp: "Consumer Registration",
+    createFarmerAccount: "Join as a Farmer",
+    createConsumerAccount: "Join as a Consumer",
+    farmerSignupText: "Create an account to sell fresh produce directly to consumers in your 10 km area.",
+    consumerSignupText: "Create an account to buy farm-fresh produce directly from local farmers.",
+    farmerName: "Your Name / Farm Name",
+    consumerName: "Your Full Name",
+    farmArea: "Farm Area",
+    deliveryArea: "Delivery Area",
+    phoneNumber: "Phone number",
+    registerFarmerBtn: "Create Farmer Account",
+    registerConsumerBtn: "Create Consumer Account",
+    loginSuccess: "Welcome back,",
+    logoutSuccess: "Logged out successfully.",
+    resetDone: "Saved products, orders, and negotiations have been cleared.",
+    emailInvalid: "Please enter a valid email address (e.g. name@domain.com).",
+    emailNotFound: "Account not found for this email. Please click 'Create Account' to register.",
+    passwordIncorrect: "Incorrect password. Please try again.",
+    emailAlreadyExists: "An account with this email already exists. Please sign in.",
+    accountCreated: "Account created successfully! Welcome, {name}.",
+    passwordMinLength: "Password must be at least 4 characters.",
+    nameRequired: "Please enter your name.",
+    currentAccount: "Account",
+
+    // Order History & Automatic Daily Deletion Keys
+    todayOrdersTab: "Today's Orders",
+    orderHistoryTab: "Order History",
+    filterByStatus: "Filter Status",
+    allStatuses: "All Statuses",
+    totalHistorical: "Previous Orders Total:",
+    noTodayOrders: "No orders placed today. Previous days' orders can be viewed in Order History.",
+    noHistoryOrders: "No previous orders in history.",
+    nextDay: "Next Day",
+    dayAdvancedToast: "Day advanced to {date}. Home page data refreshed for the new day!",
+    today: "Today",
+    previousDay: "Previous"
   },
   hi: {
     network: "10 किमी स्थानीय किसान नेटवर्क",
@@ -153,103 +210,160 @@ const i18n = {
     nearbyProducts: "पास के उत्पाद",
     orders: "ऑर्डर",
     myOrders: "मेरे ऑर्डर",
-    incomingOrders: "आने वाले ऑर्डर",
+    incomingOrders: "प्राप्त ऑर्डर",
     secureCheckout: "सुरक्षित चेकआउट",
     onlinePayment: "ऑनलाइन भुगतान",
     demoGateway: "डेमो गेटवे",
-    upi: "यूपीआई",
+    upi: "UPI",
     card: "कार्ड",
-    cod: "नकद",
-    payForOrder: "ऑर्डर का भुगतान",
-    upiId: "यूपीआई आईडी",
+    cod: "कैश",
+    payForOrder: "ऑर्डर का भुगतान करें",
+    upiId: "UPI ID",
     cardNumber: "कार्ड नंबर",
-    cashNote: "नकद नोट",
-    cashPlaceholder: "उत्पाद आने पर भुगतान",
+    cashNote: "कैश नोट",
+    cashPlaceholder: "उत्पाद मिलने पर नकद भुगतान",
     amount: "राशि",
     payNow: "अभी भुगतान करें",
     productName: "उत्पाद का नाम",
     productPhoto: "उत्पाद फोटो",
     productPlaceholder: "ताजा पालक",
-    pricePerUnit: "प्रति यूनिट कीमत",
-    unit: "यूनिट",
+    pricePerUnit: "इकाई मूल्य",
+    unit: "इकाई",
     stock: "स्टॉक",
     distanceFromBuyer: "खरीदार से दूरी",
     listProduct: "उत्पाद सूचीबद्ध करें",
-    inventory: "इन्वेंटरी",
+    inventory: "इन्वेंट्री",
     myProducts: "मेरे उत्पाद",
     paymentDashboard: "भुगतान डैशबोर्ड",
-    bankLinked: "बैंक जुड़ा है",
-    receivedToday: "आज प्राप्त",
-    pendingAmount: "बाकी",
+    bankLinked: "बैंक लिंक है",
+    receivedToday: "आज प्राप्त राशि",
+    pendingAmount: "लंबित राशि",
     settlementAccount: "सेटलमेंट खाता",
-    requestSettlement: "सेटलमेंट अनुरोध भेजें",
+    requestSettlement: "सहेजें और सेटलमेंट अनुरोध करें",
     allCategories: "सभी श्रेणियां",
     Vegetables: "सब्जियां",
     Fruits: "फल",
     Grains: "अनाज",
     Dairy: "डेयरी",
-    kg: "किलो",
+    kg: "किग्रा",
     dozen: "दर्जन",
     liter: "लीटर",
-    bag: "बोरी",
+    bag: "थैला",
     away: "दूर",
     available: "उपलब्ध",
     negotiation: "मोलभाव",
-    negotiationOffers: "मोलभाव ऑफर",
-    offerAmount: "प्रति यूनिट ऑफर राशि",
-    revisedOffer: "संशोधित ऑफर",
-    acceptOffer: "ऑफर स्वीकार करें",
-    acceptRevisedOffer: "संशोधित ऑफर स्वीकार करें",
-    sendRevisedOffer: "संशोधित ऑफर भेजें",
+    negotiationOffers: "मोलभाव प्रस्ताव",
+    offerAmount: "प्रति इकाई प्रस्ताव मूल्य",
+    revisedOffer: "संशोधित प्रस्ताव",
+    acceptOffer: "प्रस्ताव स्वीकार करें",
+    acceptRevisedOffer: "संशोधित प्रस्ताव स्वीकार करें",
+    sendRevisedOffer: "संशोधित प्रस्ताव भेजें",
     dailyUpdate: "दैनिक अपडेट",
-    acceptedToday: "आज स्वीकार हुए",
-    paidToday: "आज भुगतान हुए",
+    acceptedToday: "आज स्वीकृत",
+    paidToday: "आज भुगतान हुआ",
     negotiate: "मोलभाव करें",
     placeOrder: "ऑर्डर दें",
     acceptOrder: "ऑर्डर स्वीकार करें",
     rejectOrder: "ऑर्डर अस्वीकार करें",
-    markPaid: "भुगतान पूरा करें",
-    receivePayment: "भुगतान प्राप्त करें",
+    markPaid: "भुगतान मार्क करें",
+    receivePayment: "भुगतान पाएं",
     buyer: "खरीदार",
     farmer: "किसान",
     qty: "मात्रा",
     quantityToBuy: "खरीदने की मात्रा",
-    paid: "भुगतान हुआ",
-    accepted: "स्वीकार",
-    rejected: "अस्वीकार",
-    paymentPending: "भुगतान बाकी",
-    placed: "दिया गया",
-    noProducts: "{distance} किमी के भीतर कोई उत्पाद नहीं मिला।",
+    paid: "भुगतान संपन्न",
+    accepted: "स्वीकृत",
+    rejected: "अस्वीकृत",
+    paymentPending: "भुगतान लंबित",
+    placed: "ऑर्डर दिया",
+    noProducts: "{distance} किमी के भीतर कोई उत्पाद नहीं मिला। जब किसान उत्पाद जोड़ेंगे, वे यहां दिखेंगे।",
     noOrders: "अभी कोई ऑर्डर नहीं है।",
-    noAcceptedToday: "आज कोई ऑर्डर स्वीकार नहीं हुआ।",
+    noAcceptedToday: "आज कोई स्वीकृत ऑर्डर नहीं है।",
     noPaidToday: "आज कोई भुगतान प्राप्त ऑर्डर नहीं है।",
-    noFarmerProducts: "अभी कोई उत्पाद सूचीबद्ध नहीं है।",
-    noNegotiations: "अभी कोई मोलभाव ऑफर नहीं है।",
-    quantityExceedsStock: "मात्रा उपलब्ध स्टॉक से ज्यादा नहीं हो सकती।",
+    noFarmerProducts: "अभी कोई उत्पाद सूचीबद्ध नहीं है। उत्पाद जोड़ने के लिए 'उत्पाद जोड़ें' फॉर्म का उपयोग करें।",
+    noNegotiations: "अभी कोई मोलभाव प्रस्ताव नहीं है।",
+    quantityExceedsStock: "मात्रा उपलब्ध स्टॉक से अधिक नहीं हो सकती।",
     orderPlaced: "ऑर्डर दिया गया और चेकआउट में जोड़ा गया।",
-    negotiationSent: "ऑफर राशि किसान को भेजी गई।",
-    offerStatus: "ऑफर भेजा गया",
-    revisedOfferStatus: "संशोधित ऑफर भेजा गया",
-    acceptedOfferStatus: "ऑफर स्वीकार",
-    offeredPrice: "ऑफर कीमत",
-    revisedPrice: "संशोधित कीमत",
+    negotiationSent: "ऑफर मूल्य किसान को भेजा गया।",
+    offerStatus: "ऑफर भेजा",
+    revisedOfferStatus: "संशोधित ऑफर भेजा",
+    acceptedOfferStatus: "ऑफर स्वीकृत",
+    offeredPrice: "प्रस्तावित मूल्य",
+    revisedPrice: "संशोधित मूल्य",
     paymentDone: "भुगतान सफलतापूर्वक पूरा हुआ।",
     offerAccepted: "मोलभाव स्वीकार हुआ और ऑर्डर बनाया गया।",
-    revisedOfferAccepted: "संशोधित ऑफर स्वीकार हुआ और ऑर्डर बनाया गया।",
-    revisedOfferSent: "संशोधित ऑफर उपभोक्ता को भेजा गया।",
+    revisedOfferAccepted: "संशोधित मोलभाव स्वीकार हुआ और ऑर्डर बनाया गया।",
+    revisedOfferSent: "उपभोक्ता को संशोधित प्रस्ताव भेजा गया।",
     orderAccepted: "ऑर्डर स्वीकार किया गया।",
     orderRejected: "ऑर्डर अस्वीकार किया गया और स्टॉक वापस जोड़ा गया।",
     settlementRequested: "सेटलमेंट अनुरोध बैंक को भेजा गया।",
+    settlementSaved: "सेटलमेंट विवरण सहेज लिया गया।",
     productListed: "उत्पाद पास के उपभोक्ताओं के लिए सूचीबद्ध हुआ।",
     refreshed: "पास के उत्पाद रीफ्रेश हुए।",
     active: "सक्रिय",
     productCount: "{count} सूचीबद्ध",
-    chooseOrder: "ऑर्डर चुनें"
-    ,Tomatoes: "टमाटर",
+    chooseOrder: "ऑर्डर चुनें",
+    Tomatoes: "टमाटर",
     BasmatiRice: "बासमती चावल",
     FreshMilk: "ताजा दूध",
     Bananas: "केले",
-    Onions: "प्याज"
+    Onions: "प्याज",
+    Spinach: "ताजा पालक",
+    Mangoes: "हापुस आम",
+    Wheat: "गेहूं",
+    Pomegranates: "अनार",
+
+    // Auth & Day Rollover keys
+    loginTitle: "FarmLink में साइन इन करें",
+    consumerLogin: "उपभोक्ता लॉगिन",
+    farmerLogin: "किसान लॉगिन",
+    consumerLoginText: "पास के किसान खोजने, ऑर्डर देने, मोलभाव करने और भुगतान करने के लिए लॉगिन करें।",
+    farmerLoginText: "उत्पाद सूचीबद्ध करने, ऑर्डर स्वीकार करने, स्टॉक संभालने और ऑनलाइन भुगतान पाने के लिए लॉगिन करें।",
+    signInTab: "साइन इन",
+    signUpTab: "खाता बनाएं",
+    emailAddress: "ईमेल पता",
+    password: "पासवर्ड",
+    login: "साइन इन",
+    logout: "लॉगआउट",
+    resetData: "डेटा साफ़ करें",
+    switchUser: "खाता बदलें",
+    farmerSignUp: "किसान पंजीकरण",
+    consumerSignUp: "उपभोक्ता पंजीकरण",
+    createFarmerAccount: "किसान के रूप में जुड़ें",
+    createConsumerAccount: "उपभोक्ता के रूप में जुड़ें",
+    farmerSignupText: "अपने 10 किमी क्षेत्र के उपभोक्ताओं को सीधे ताजा उपज बेचने के लिए खाता बनाएं।",
+    consumerSignupText: "स्थानीय किसानों से सीधे खेत की ताजी उपज खरीदने के लिए खाता बनाएं।",
+    farmerName: "आपका नाम / फार्म का नाम",
+    consumerName: "आपका पूरा नाम",
+    farmArea: "फार्म का क्षेत्र",
+    deliveryArea: "वितरण क्षेत्र",
+    phoneNumber: "फ़ोन नंबर",
+    registerFarmerBtn: "किसान खाता बनाएं",
+    registerConsumerBtn: "उपभोक्ता खाता बनाएं",
+    loginSuccess: "स्वागत है,",
+    logoutSuccess: "सफलतापूर्वक लॉगआउट हुआ।",
+    resetDone: "सहेजे गए उत्पाद, ऑर्डर और मोलभाव साफ़ कर दिए गए हैं।",
+    emailInvalid: "कृपया एक मान्य ईमेल पता दर्ज करें।",
+    emailNotFound: "इस ईमेल के लिए कोई खाता नहीं मिला। कृपया 'खाता बनाएं' पर क्लिक करें।",
+    passwordIncorrect: "गलत पासवर्ड। कृपया पुनः प्रयास करें।",
+    emailAlreadyExists: "इस ईमेल वाला खाता पहले से मौजूद है। कृपया साइन इन करें।",
+    accountCreated: "खाता सफलतापूर्वक बन गया! स्वागत है, {name}।",
+    passwordMinLength: "पासवर्ड कम से कम 4 अक्षरों का होना चाहिए।",
+    nameRequired: "कृपया अपना नाम दर्ज करें।",
+    currentAccount: "खाता",
+
+    // Order History & Automatic Daily Deletion Keys
+    todayOrdersTab: "आज के ऑर्डर",
+    orderHistoryTab: "ऑर्डर इतिहास",
+    filterByStatus: "स्थिति अनुसार फ़िल्टर",
+    allStatuses: "सभी स्थितियां",
+    totalHistorical: "पिछले ऑर्डरों का कुल:",
+    noTodayOrders: "आज कोई ऑर्डर नहीं है। पिछले दिनों के ऑर्डर 'ऑर्डर इतिहास' में हैं।",
+    noHistoryOrders: "इतिहास में कोई पिछला ऑर्डर नहीं है।",
+    nextDay: "अगला दिन",
+    dayAdvancedToast: "दिन {date} पर आगे बढ़ा। आज के होम पेज ऑर्डर 'ऑर्डर इतिहास' में ले जाए गए!",
+    today: "आज",
+    previousDay: "पिछला"
   },
   mr: {
     network: "10 किमी स्थानिक शेतकरी नेटवर्क",
@@ -258,177 +372,183 @@ const i18n = {
     farmerSite: "शेतकरी वेबसाइट",
     consumerEyebrow: "ताजी उत्पादने जवळच",
     consumerTitle: "शोधा, भाव करा, ऑर्डर द्या आणि शेतकऱ्यांना पैसे द्या.",
-    consumerIntro: "10 किमीमध्ये शेती उत्पादने शोधा, किंमती तुलना करा, ऑफर पाठवा, ऑर्डर द्या आणि एकाच स्क्रीनवर ऑनलाइन पेमेंट करा.",
-    farmerEyebrow: "जवळच थेट विक्री",
-    farmerTitle: "उत्पादने यादीत टाका, ऑर्डर स्वीकारा आणि ऑनलाइन पेमेंट घ्या.",
-    farmerIntro: "10 किमीतील ग्राहकांसाठी उत्पादने, किंमती, साठा, ऑर्डर, भाव चर्चा आणि पेमेंट स्थिती सांभाळा.",
-    browseMarket: "बाजार पाहा",
+    consumerIntro: "10 किमी परिसरात शेत उत्पादने शोधा, किंमती तपासा, ऑफर पाठवा, ऑर्डर द्या आणि एकाच ठिकाणाहून ऑनलाइन पेमेंट करा.",
+    farmerEyebrow: "जवळच थेट विक्री करा",
+    farmerTitle: "उत्पादने जोडा, ऑर्डर स्वीकारा आणि ऑनलाइन पैसे मिळवा.",
+    farmerIntro: "10 किमी मधील ग्राहकांसाठी उत्पादने, किंमत, स्टॉक, ऑर्डर, भाव चर्चा आणि पेमेंट हाताळा.",
+    browseMarket: "बाजारपेठ पहा",
     paymentTab: "पेमेंट टॅब",
     addProduct: "उत्पादन जोडा",
-    yourLocation: "तुमचे ठिकाण",
+    yourLocation: "आपले ठिकाण",
     farmLocation: "शेताचे ठिकाण",
     radiusText: "10 किमी परिसरातील शेतकरी आणि उत्पादने दाखवत आहे.",
-    farmerRadiusText: "10 किमी परिसरातील ग्राहकांकडून ऑर्डर घ्या.",
-    area: "परिसर",
+    farmerRadiusText: "10 किमी परिसरातील ग्राहकांकडून ऑर्डर मिळवा.",
+    area: "विभाग",
     findProducts: "उत्पादने शोधा",
     search: "शोधा",
     searchPlaceholder: "टोमॅटो, तांदूळ, दूध...",
-    category: "प्रकार",
+    category: "प्रवर्ग",
     maxDistance: "कमाल अंतर",
     nearbyFarmers: "जवळचे शेतकरी",
     nearbyProducts: "जवळची उत्पादने",
     orders: "ऑर्डर",
     myOrders: "माझ्या ऑर्डर",
-    incomingOrders: "येणाऱ्या ऑर्डर",
-    secureCheckout: "सुरक्षित चेकआउट",
+    incomingOrders: "नवीन ऑर्डर",
+    secureCheckout: "सुरक्षित पेमेंट",
     onlinePayment: "ऑनलाइन पेमेंट",
     demoGateway: "डेमो गेटवे",
-    upi: "यूपीआय",
+    upi: "UPI",
     card: "कार्ड",
     cod: "रोख",
-    payForOrder: "ऑर्डरसाठी पेमेंट",
-    upiId: "यूपीआय आयडी",
+    payForOrder: "ऑर्डरसाठी पेमेंट करा",
+    upiId: "UPI ID",
     cardNumber: "कार्ड नंबर",
     cashNote: "रोख नोंद",
-    cashPlaceholder: "उत्पादन आल्यावर पेमेंट",
+    cashPlaceholder: "माल आल्यावर रोख पैसे द्या",
     amount: "रक्कम",
     payNow: "आता पेमेंट करा",
     productName: "उत्पादनाचे नाव",
-    productPhoto: "उत्पादन फोटो",
-    productPlaceholder: "ताजी पालक",
-    pricePerUnit: "प्रति युनिट किंमत",
+    productPhoto: "उत्पादनाचा फोटो",
+    productPlaceholder: "ताजा पालक",
+    pricePerUnit: "दर प्रति युनिट",
     unit: "युनिट",
-    stock: "साठा",
-    distanceFromBuyer: "खरेदीदारापासून अंतर",
-    listProduct: "उत्पादन यादीत टाका",
-    inventory: "साठा यादी",
+    stock: "उपलब्ध साठा",
+    distanceFromBuyer: "ग्राहकापासून अंतर",
+    listProduct: "उत्पादन जोडा",
+    inventory: "उत्पादने",
     myProducts: "माझी उत्पादने",
     paymentDashboard: "पेमेंट डॅशबोर्ड",
-    bankLinked: "बँक जोडली आहे",
-    receivedToday: "आज मिळाले",
-    pendingAmount: "बाकी",
-    settlementAccount: "सेटलमेंट खाते",
-    requestSettlement: "सेटलमेंट विनंती पाठवा",
-    allCategories: "सर्व प्रकार",
+    bankLinked: "बँक जोडलेली आहे",
+    receivedToday: "आज मिळालेली रक्कम",
+    pendingAmount: "बाकी रक्कम",
+    settlementAccount: "बँक खाते",
+    requestSettlement: "जतन करा व सेटलमेंट विनंती पाठवा",
+    allCategories: "सर्व प्रवर्ग",
     Vegetables: "भाज्या",
     Fruits: "फळे",
     Grains: "धान्य",
-    Dairy: "दुग्धजन्य",
+    Dairy: "डेअरी",
     kg: "किलो",
     dozen: "डझन",
     liter: "लिटर",
-    bag: "पोते",
-    away: "दूर",
+    bag: "पिशवी",
+    away: "लांब",
     available: "उपलब्ध",
     negotiation: "भाव चर्चा",
-    negotiationOffers: "भाव ऑफर",
-    offerAmount: "प्रति युनिट ऑफर रक्कम",
+    negotiationOffers: "भाव चर्चा ऑफर",
+    offerAmount: "प्रति युनिट ऑफर किंमत",
     revisedOffer: "सुधारित ऑफर",
     acceptOffer: "ऑफर स्वीकारा",
     acceptRevisedOffer: "सुधारित ऑफर स्वीकारा",
     sendRevisedOffer: "सुधारित ऑफर पाठवा",
     dailyUpdate: "दैनिक अपडेट",
-    acceptedToday: "आज स्वीकारलेल्या",
-    paidToday: "आज पेमेंट झालेल्या",
+    acceptedToday: "आज स्वीकारलेले",
+    paidToday: "आज भरलेले",
     negotiate: "भाव करा",
     placeOrder: "ऑर्डर द्या",
     acceptOrder: "ऑर्डर स्वीकारा",
     rejectOrder: "ऑर्डर नाकारा",
-    markPaid: "पेमेंट पूर्ण करा",
-    receivePayment: "पेमेंट घ्या",
-    buyer: "खरेदीदार",
+    markPaid: "भरले म्हणून नोंदवा",
+    receivePayment: "पैसे मिळवा",
+    buyer: "ग्राहक",
     farmer: "शेतकरी",
     qty: "प्रमाण",
     quantityToBuy: "खरेदीचे प्रमाण",
     paid: "पेमेंट झाले",
-    accepted: "स्वीकारली",
-    rejected: "नाकारली",
+    accepted: "स्वीकृत",
+    rejected: "नाकारले",
     paymentPending: "पेमेंट बाकी",
-    placed: "दिली",
-    noProducts: "{distance} किमीमध्ये उत्पादने सापडली नाहीत.",
-    noOrders: "अजून ऑर्डर नाहीत.",
-    noAcceptedToday: "आज कोणतीही ऑर्डर स्वीकारलेली नाही.",
+    placed: "ऑर्डर दिली",
+    noProducts: "{distance} किमी परिसरात उत्पादने सापडली नाहीत. शेतकऱ्यांनी उत्पादने जोडल्यावर येथे दिसतील.",
+    noOrders: "अजून कोणतीही ऑर्डर नाही.",
+    noAcceptedToday: "आज कोणतीही स्वीकृत ऑर्डर नाही.",
     noPaidToday: "आज पेमेंट झालेली ऑर्डर नाही.",
-    noFarmerProducts: "अजून उत्पादने यादीत नाहीत.",
-    noNegotiations: "अजून भाव ऑफर नाहीत.",
+    noFarmerProducts: "अजून कोणतीही उत्पादने टाकलेली नाहीत. उत्पादने जोडण्यासाठी वरील फॉर्म वापरा.",
+    noNegotiations: "अजून कोणत्याही ऑफर नाहीत.",
     quantityExceedsStock: "प्रमाण उपलब्ध साठ्यापेक्षा जास्त असू शकत नाही.",
-    orderPlaced: "ऑर्डर दिली आणि चेकआउटमध्ये जोडली.",
-    negotiationSent: "ऑफर रक्कम शेतकऱ्याला पाठवली.",
+    orderPlaced: "ऑर्डर नोंदवली आणि चेकआउटमध्ये जोडली गेली.",
+    negotiationSent: "ऑफर शेतकऱ्याला पाठवली गेली.",
     offerStatus: "ऑफर पाठवली",
     revisedOfferStatus: "सुधारित ऑफर पाठवली",
-    acceptedOfferStatus: "ऑफर स्वीकारली",
-    offeredPrice: "ऑफर किंमत",
+    acceptedOfferStatus: "ऑफर मंजूर",
+    offeredPrice: "ऑफर केलेली किंमत",
     revisedPrice: "सुधारित किंमत",
-    paymentDone: "पेमेंट यशस्वीरीत्या पूर्ण झाले.",
-    offerAccepted: "भाव ऑफर स्वीकारली आणि ऑर्डर तयार झाली.",
-    revisedOfferAccepted: "सुधारित ऑफर स्वीकारली आणि ऑर्डर तयार झाली.",
-    revisedOfferSent: "सुधारित ऑफर ग्राहकाला पाठवली.",
-    orderAccepted: "ऑर्डर स्वीकारली.",
-    orderRejected: "ऑर्डर नाकारली आणि साठा परत जोडला.",
-    settlementRequested: "सेटलमेंट विनंती बँकेला पाठवली.",
-    productListed: "उत्पादन जवळच्या ग्राहकांसाठी यादीत टाकले.",
-    refreshed: "जवळची उत्पादने रीफ्रेश झाली.",
+    paymentDone: "पेमेंट यशस्वी झाले.",
+    offerAccepted: "भाव मान्य झाला आणि ऑर्डर तयार झाली.",
+    revisedOfferAccepted: "सुधारित ऑफर मान्य झाली आणि ऑर्डर तयार झाली.",
+    revisedOfferSent: "ग्राहकाला सुधारित ऑफर पाठवली गेली.",
+    orderAccepted: "ऑर्डर स्वीकारली गेली.",
+    orderRejected: "ऑर्डर नाकारली आणि साठा पूर्ववत केला.",
+    settlementRequested: "बँकेकडे सेटलमेंट विनंती पाठवली.",
+    settlementSaved: "सेटलमेंट तपशील जतन केले.",
+    productListed: "उत्पादन ग्राहकांसाठी उपलब्ध झाले.",
+    refreshed: "उत्पादने रिफ्रेश केली.",
     active: "सक्रिय",
-    productCount: "{count} यादीत",
-    chooseOrder: "ऑर्डर निवडा"
-    ,Tomatoes: "टोमॅटो",
+    productCount: "{count} उपलब्ध",
+    chooseOrder: "ऑर्डर निवडा",
+    Tomatoes: "टोमॅटो",
     BasmatiRice: "बासमती तांदूळ",
     FreshMilk: "ताजे दूध",
     Bananas: "केळी",
-    Onions: "कांदे"
+    Onions: "कांदा",
+    Spinach: "ताजा पालक",
+    Mangoes: "हापूस आंबा",
+    Wheat: "गहू",
+    Pomegranates: "डाळिंब",
+
+    // Auth & Day Rollover keys
+    loginTitle: "FarmLink मध्ये साइन इन करा",
+    consumerLogin: "ग्राहक लॉगिन",
+    farmerLogin: "शेतकरी लॉगिन",
+    consumerLoginText: "जवळचे शेतकरी शोधणे, ऑर्डर देणे, भाव करणे आणि पेमेंट करण्यासाठी लॉगिन करा.",
+    farmerLoginText: "उत्पादने यादीत टाकणे, ऑर्डर स्वीकारणे, साठा सांभाळणे आणि ऑनलाइन पेमेंट घेण्यासाठी लॉगिन करा.",
+    signInTab: "साइन इन",
+    signUpTab: "खाते तयार करा",
+    emailAddress: "ईमेल पत्ता",
+    password: "पासवर्ड",
+    login: "साइन इन",
+    logout: "लॉगआउट",
+    resetData: "डेटा साफ करा",
+    switchUser: "खाते बदला",
+    farmerSignUp: "शेतकरी नोंदणी",
+    consumerSignUp: "ग्राहक नोंदणी",
+    createFarmerAccount: "शेतकरी म्हणून सामील व्हा",
+    createConsumerAccount: "ग्राहक म्हणून सामील व्हा",
+    farmerSignupText: "आपल्या 10 किमी परिसरातील ग्राहकांना थेट ताजी उत्पादने विकण्यासाठी खाते तयार करा.",
+    consumerSignupText: "स्थानिक शेतकऱ्यांकडून थेट ताजी शेत उत्पादने खरेदी करण्यासाठी खाते तयार करा.",
+    farmerName: "आपले नाव / फार्मचे नाव",
+    consumerName: "आपले पूर्ण नाव",
+    farmArea: "शेताचे क्षेत्र",
+    deliveryArea: "डिलिव्हरी क्षेत्र",
+    phoneNumber: "फोन नंबर",
+    registerFarmerBtn: "शेतकरी खाते तयार करा",
+    registerConsumerBtn: "ग्राहक खाते तयार करा",
+    loginSuccess: "स्वागत आहे,",
+    logoutSuccess: "यशस्वीरित्या लॉगआउट झाले.",
+    resetDone: "जतन केलेली उत्पादने, ऑर्डर आणि भाव चर्चा साफ करण्यात आली आहेत.",
+    emailInvalid: "कृपया वैध ईमेल पत्ता टाका.",
+    emailNotFound: "या ईमेलसाठी खाते सापडले नाही. कृपया 'खाते तयार करा' वर क्लिक करा.",
+    passwordIncorrect: "चुकीचा पासवर्ड. कृपया पुन्हा प्रयत्न करा.",
+    emailAlreadyExists: "या ईमेलचे खाते आधीच अस्तित्वात आहे. कृपया साइन इन करा.",
+    accountCreated: "खाते यशस्वीरित्या तयार झाले! स्वागत आहे, {name}.",
+    passwordMinLength: "पासवर्ड किमान 4 अक्षरांचा असावा.",
+    nameRequired: "कृपया आपले नाव प्रविष्ट करा.",
+    currentAccount: "खाते",
+
+    // Order History & Automatic Daily Deletion Keys
+    todayOrdersTab: "आजच्या ऑर्डर",
+    orderHistoryTab: "ऑर्डर इतिहास",
+    filterByStatus: "स्थितीनुसार फिल्टर",
+    allStatuses: "सर्व स्थिती",
+    totalHistorical: "मागील ऑर्डरचे एकूण:",
+    noTodayOrders: "आज कोणतीही ऑर्डर नाही. मागील दिवसांच्या ऑर्डर 'ऑर्डर इतिहास' मध्ये आहेत.",
+    noHistoryOrders: "इतिहासामध्ये मागील कोणतीही ऑर्डर नाही.",
+    nextDay: "पुढचा दिवस",
+    dayAdvancedToast: "दिवस {date} वर पुढे सरकला. आजचे होम पेजवरील ऑर्डर 'ऑर्डर इतिहास' मध्ये गेले!",
+    today: "आज",
+    previousDay: "मागील"
   }
 };
-
-Object.assign(i18n.en, {
-  loginTitle: "Sign in to FarmLink",
-  consumerLogin: "Consumer login",
-  farmerLogin: "Farmer login",
-  consumerLoginText: "Login to search nearby farmers, place orders, negotiate prices, and make payments.",
-  farmerLoginText: "Login to list products, accept orders, manage stock, and receive online payments.",
-  mobileOrEmail: "Mobile or email",
-  password: "Password",
-  login: "Login",
-  logout: "Logout",
-  resetData: "Reset data",
-  demoLoginHint: "Demo login: enter any mobile/email and password.",
-  loginSuccess: "Login successful.",
-  logoutSuccess: "Logged out.",
-  resetDone: "Saved uploads, orders, and negotiations were reset."
-});
-
-Object.assign(i18n.hi, {
-  loginTitle: "\u0046\u0061\u0072\u006d\u004c\u0069\u006e\u006b \u092e\u0947\u0902 \u0938\u093e\u0907\u0928 \u0907\u0928 \u0915\u0930\u0947\u0902",
-  consumerLogin: "\u0909\u092a\u092d\u094b\u0915\u094d\u0924\u093e \u0932\u0949\u0917\u093f\u0928",
-  farmerLogin: "\u0915\u093f\u0938\u093e\u0928 \u0932\u0949\u0917\u093f\u0928",
-  consumerLoginText: "\u092a\u093e\u0938 \u0915\u0947 \u0915\u093f\u0938\u093e\u0928 \u0916\u094b\u091c\u0928\u0947, \u0911\u0930\u094d\u0921\u0930 \u0926\u0947\u0928\u0947, \u092e\u094b\u0932\u092d\u093e\u0935 \u0915\u0930\u0928\u0947 \u0914\u0930 \u092d\u0941\u0917\u0924\u093e\u0928 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0932\u0949\u0917\u093f\u0928 \u0915\u0930\u0947\u0902\u0964",
-  farmerLoginText: "\u0909\u0924\u094d\u092a\u093e\u0926 \u0938\u0942\u091a\u0940\u092c\u0926\u094d\u0927 \u0915\u0930\u0928\u0947, \u0911\u0930\u094d\u0921\u0930 \u0938\u094d\u0935\u0940\u0915\u093e\u0930 \u0915\u0930\u0928\u0947, \u0938\u094d\u091f\u0949\u0915 \u0938\u0902\u092d\u093e\u0932\u0928\u0947 \u0914\u0930 \u0911\u0928\u0932\u093e\u0907\u0928 \u092d\u0941\u0917\u0924\u093e\u0928 \u092a\u093e\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0932\u0949\u0917\u093f\u0928 \u0915\u0930\u0947\u0902\u0964",
-  mobileOrEmail: "\u092e\u094b\u092c\u093e\u0907\u0932 \u092f\u093e \u0908\u092e\u0947\u0932",
-  password: "\u092a\u093e\u0938\u0935\u0930\u094d\u0921",
-  login: "\u0932\u0949\u0917\u093f\u0928",
-  logout: "\u0932\u0949\u0917\u0906\u0909\u091f",
-  resetData: "\u0921\u0947\u091f\u093e \u0930\u0940\u0938\u0947\u091f",
-  demoLoginHint: "\u0921\u0947\u092e\u094b \u0932\u0949\u0917\u093f\u0928: \u0915\u094b\u0908 \u092d\u0940 \u092e\u094b\u092c\u093e\u0907\u0932/\u0908\u092e\u0947\u0932 \u0914\u0930 \u092a\u093e\u0938\u0935\u0930\u094d\u0921 \u0926\u093e\u0916\u093f\u0932 \u0915\u0930\u0947\u0902\u0964",
-  loginSuccess: "\u0932\u0949\u0917\u093f\u0928 \u0938\u092b\u0932 \u0939\u0941\u0906\u0964",
-  logoutSuccess: "\u0932\u0949\u0917\u0906\u0909\u091f \u0939\u0941\u0906\u0964",
-  resetDone: "\u0938\u0947\u0935 \u0915\u093f\u090f \u0905\u092a\u0932\u094b\u0921, \u0911\u0930\u094d\u0921\u0930 \u0914\u0930 \u092e\u094b\u0932\u092d\u093e\u0935 \u0930\u0940\u0938\u0947\u091f \u0939\u0941\u090f\u0964"
-});
-
-Object.assign(i18n.mr, {
-  loginTitle: "\u0046\u0061\u0072\u006d\u004c\u0069\u006e\u006b \u092e\u0927\u094d\u092f\u0947 \u0938\u093e\u0907\u0928 \u0907\u0928 \u0915\u0930\u093e",
-  consumerLogin: "\u0917\u094d\u0930\u093e\u0939\u0915 \u0932\u0949\u0917\u093f\u0928",
-  farmerLogin: "\u0936\u0947\u0924\u0915\u0930\u0940 \u0932\u0949\u0917\u093f\u0928",
-  consumerLoginText: "\u091c\u0935\u0933\u091a\u0947 \u0936\u0947\u0924\u0915\u0930\u0940 \u0936\u094b\u0927\u0923\u0947, \u0911\u0930\u094d\u0921\u0930 \u0926\u0947\u0923\u0947, \u092d\u093e\u0935 \u0915\u0930\u0923\u0947 \u0906\u0923\u093f \u092a\u0947\u092e\u0947\u0902\u091f \u0915\u0930\u0923\u094d\u092f\u093e\u0938\u093e\u0920\u0940 \u0932\u0949\u0917\u093f\u0928 \u0915\u0930\u093e.",
-  farmerLoginText: "\u0909\u0924\u094d\u092a\u093e\u0926\u0928\u0947 \u092f\u093e\u0926\u0940\u0924 \u091f\u093e\u0915\u0923\u0947, \u0911\u0930\u094d\u0921\u0930 \u0938\u094d\u0935\u0940\u0915\u093e\u0930\u0923\u0947, \u0938\u093e\u0920\u093e \u0938\u093e\u0902\u092d\u093e\u0933\u0923\u0947 \u0906\u0923\u093f \u0911\u0928\u0932\u093e\u0907\u0928 \u092a\u0947\u092e\u0947\u0902\u091f \u0918\u0947\u0923\u094d\u092f\u093e\u0938\u093e\u0920\u0940 \u0932\u0949\u0917\u093f\u0928 \u0915\u0930\u093e.",
-  mobileOrEmail: "\u092e\u094b\u092c\u093e\u0907\u0932 \u0915\u093f\u0902\u0935\u093e \u0908\u092e\u0947\u0932",
-  password: "\u092a\u093e\u0938\u0935\u0930\u094d\u0921",
-  login: "\u0932\u0949\u0917\u093f\u0928",
-  logout: "\u0932\u0949\u0917\u0906\u0909\u091f",
-  resetData: "\u0921\u0947\u091f\u093e \u0930\u0940\u0938\u0947\u091f",
-  demoLoginHint: "\u0921\u0947\u092e\u094b \u0932\u0949\u0917\u093f\u0928: \u0915\u094b\u0923\u0924\u093e\u0939\u0940 \u092e\u094b\u092c\u093e\u0907\u0932/\u0908\u092e\u0947\u0932 \u0906\u0923\u093f \u092a\u093e\u0938\u0935\u0930\u094d\u0921 \u091f\u093e\u0915\u093e.",
-  loginSuccess: "\u0932\u0949\u0917\u093f\u0928 \u092f\u0936\u0938\u094d\u0935\u0940 \u091d\u093e\u0932\u0947.",
-  logoutSuccess: "\u0932\u0949\u0917\u0906\u0909\u091f \u091d\u093e\u0932\u0947.",
-  resetDone: "\u0938\u0947\u0935\u094d\u0939 \u0915\u0947\u0932\u0947\u0932\u0947 \u0905\u092a\u0932\u094b\u0921, \u0911\u0930\u094d\u0921\u0930 \u0906\u0923\u093f \u092d\u093e\u0935 \u091a\u0930\u094d\u091a\u093e \u0930\u0940\u0938\u0947\u091f \u091d\u093e\u0932\u0940."
-});
 
 const categories = ["Vegetables", "Fruits", "Grains", "Dairy"];
 const units = ["kg", "dozen", "liter", "bag"];
@@ -442,40 +562,6 @@ const areas = [
   { value: "yeola", en: "Yeola", hi: "येवला", mr: "येवला" }
 ];
 
-const products = loadStoredList("farmlink-products");
-
-const orders = loadStoredList("farmlink-orders");
-
-const negotiations = loadStoredList("farmlink-negotiations");
-
-let migratedOrderDates = false;
-orders.forEach((order) => {
-  if (order.status === "accepted" && !order.acceptedAt) {
-    order.acceptedAt = nowIso();
-    migratedOrderDates = true;
-  }
-  if (order.status === "paid" && !order.paidAt) {
-    order.paidAt = nowIso();
-    migratedOrderDates = true;
-  }
-});
-if (migratedOrderDates) saveData();
-
-const state = {
-  page: document.body.dataset.page,
-  language: localStorage.getItem("farmlink-language") || "en",
-  isLoggedIn: localStorage.getItem(`farmlink-${document.body.dataset.page}-logged-in`) === "true",
-  accountId: localStorage.getItem(`farmlink-${document.body.dataset.page}-account`) || "",
-  area: "sinnar",
-  search: "",
-  category: "all",
-  distance: 10,
-  paymentMethod: "upi"
-};
-
-const $ = (selector) => document.querySelector(selector);
-const $$ = (selector) => [...document.querySelectorAll(selector)];
-
 function loadStoredList(key) {
   try {
     const stored = JSON.parse(localStorage.getItem(key) || "[]");
@@ -485,10 +571,123 @@ function loadStoredList(key) {
   }
 }
 
+// Clean up any old demo preloaded data from previous sessions
+const demoEmails = [
+  "ramesh@farm.com", "anita@farm.com", "suresh@farm.com",
+  "rahul@gmail.com", "priya@gmail.com", "vikram@gmail.com"
+];
+
+function sanitizeStoredData() {
+  let storedUsers = loadStoredList("farmlink-users");
+  let storedProducts = loadStoredList("farmlink-products");
+  let storedOrders = loadStoredList("farmlink-orders");
+  let storedNegotiations = loadStoredList("farmlink-negotiations");
+
+  const cleanUsers = storedUsers.filter(u => !demoEmails.includes(String(u.email).toLowerCase()));
+  const cleanProducts = storedProducts.filter(p => !demoEmails.includes(String(p.farmerId).toLowerCase()));
+  const cleanOrders = storedOrders.filter(o => !demoEmails.includes(String(o.buyerId).toLowerCase()) && !demoEmails.includes(String(o.farmerId).toLowerCase()));
+  const cleanNegotiations = storedNegotiations.filter(n => !demoEmails.includes(String(n.buyerId).toLowerCase()) && !demoEmails.includes(String(n.farmerId).toLowerCase()));
+
+  localStorage.setItem("farmlink-users", JSON.stringify(cleanUsers));
+  localStorage.setItem("farmlink-products", JSON.stringify(cleanProducts));
+  localStorage.setItem("farmlink-orders", JSON.stringify(cleanOrders));
+  localStorage.setItem("farmlink-negotiations", JSON.stringify(cleanNegotiations));
+
+  const pageRole = document.body.dataset.page;
+  const currentAccount = localStorage.getItem(`farmlink-${pageRole}-account`);
+  if (currentAccount && demoEmails.includes(currentAccount.toLowerCase())) {
+    localStorage.removeItem(`farmlink-${pageRole}-account`);
+    localStorage.removeItem(`farmlink-${pageRole}-logged-in`);
+  }
+
+  return { cleanUsers, cleanProducts, cleanOrders, cleanNegotiations };
+}
+
+const cleaned = sanitizeStoredData();
+const users = cleaned.cleanUsers;
+const products = cleaned.cleanProducts;
+const orders = cleaned.cleanOrders;
+const negotiations = cleaned.cleanNegotiations;
+
+const pageRole = document.body.dataset.page;
+const storedAccount = localStorage.getItem(`farmlink-${pageRole}-account`) || "";
+const storedLoggedIn = localStorage.getItem(`farmlink-${pageRole}-logged-in`) === "true";
+
+// Effective Day & Date Tracking
+function getDayOffset() {
+  return Number(localStorage.getItem("farmlink-day-offset") || 0);
+}
+
+function getEffectiveDate() {
+  const date = new Date();
+  date.setDate(date.getDate() + getDayOffset());
+  return date;
+}
+
+function effectiveTodayKey() {
+  return getEffectiveDate().toISOString().slice(0, 10);
+}
+
+function nowIso() {
+  return getEffectiveDate().toISOString();
+}
+
+function isEffectiveToday(isoString) {
+  if (!isoString) return false;
+  return String(isoString).slice(0, 10) === effectiveTodayKey();
+}
+
+const state = {
+  page: pageRole,
+  language: localStorage.getItem("farmlink-language") || "en",
+  isLoggedIn: Boolean(storedLoggedIn && storedAccount),
+  accountId: storedAccount,
+  area: "sinnar",
+  search: "",
+  category: "all",
+  distance: 10,
+  paymentMethod: "upi",
+  orderViewTab: "today",
+  historyStatusFilter: "all"
+};
+
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => [...document.querySelectorAll(selector)];
+
 function saveData() {
   localStorage.setItem("farmlink-products", JSON.stringify(products));
   localStorage.setItem("farmlink-orders", JSON.stringify(orders));
   localStorage.setItem("farmlink-negotiations", JSON.stringify(negotiations));
+}
+
+function saveUsers() {
+  localStorage.setItem("farmlink-users", JSON.stringify(users));
+}
+
+function normalizeEmail(value) {
+  return String(value || "").trim().toLowerCase();
+}
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email).trim());
+}
+
+function findUser(email) {
+  const norm = normalizeEmail(email);
+  return users.find((u) => normalizeEmail(u.email) === norm);
+}
+
+function getCurrentUser() {
+  return findUser(state.accountId);
+}
+
+function displayAccount(value) {
+  const user = findUser(value);
+  if (user) {
+    return user.farmName || user.name || user.email;
+  }
+  const text = String(value || "").trim();
+  return text || "User";
 }
 
 function repairText(value) {
@@ -502,7 +701,8 @@ function repairText(value) {
 }
 
 function t(key, replacements = {}) {
-  const template = repairText(i18n[state.language][key] || i18n.en[key] || key);
+  const langDict = i18n[state.language] || i18n.en;
+  const template = repairText(langDict[key] || i18n.en[key] || key);
   return Object.entries(replacements).reduce((text, [name, value]) => text.replaceAll(`{${name}}`, value), template);
 }
 
@@ -510,16 +710,18 @@ function money(value) {
   return `Rs ${Number(value).toLocaleString("en-IN")}`;
 }
 
-function nowIso() {
-  return new Date().toISOString();
-}
-
-function todayKey() {
-  return new Date().toISOString().slice(0, 10);
-}
-
-function isToday(value) {
-  return Boolean(value) && String(value).slice(0, 10) === todayKey();
+function formatOrderDate(isoString) {
+  if (!isoString) return "";
+  try {
+    const date = new Date(isoString);
+    return date.toLocaleDateString(state.language === "hi" ? "hi-IN" : (state.language === "mr" ? "mr-IN" : "en-IN"), {
+      year: "numeric",
+      month: "short",
+      day: "numeric"
+    });
+  } catch {
+    return String(isoString).slice(0, 10);
+  }
 }
 
 function readFileAsDataUrl(file) {
@@ -537,23 +739,62 @@ function readFileAsDataUrl(file) {
 
 function showToast(message) {
   const toast = $("#toast");
+  if (!toast) return;
   toast.textContent = message;
   toast.classList.add("show");
-  window.setTimeout(() => toast.classList.remove("show"), 2200);
+  window.setTimeout(() => toast.classList.remove("show"), 2600);
+}
+
+function showAuthAlert(message, isSuccess = false) {
+  const alertBox = $("#authAlert");
+  if (!alertBox) return;
+  alertBox.textContent = message;
+  alertBox.classList.toggle("success", isSuccess);
+  alertBox.style.display = "block";
+}
+
+function hideAuthAlert() {
+  const alertBox = $("#authAlert");
+  if (alertBox) alertBox.style.display = "none";
+}
+
+function checkDayRollover() {
+  const lastRecorded = localStorage.getItem("farmlink-last-recorded-date");
+  const currentDay = effectiveTodayKey();
+  if (!lastRecorded) {
+    localStorage.setItem("farmlink-last-recorded-date", currentDay);
+    return;
+  }
+  if (lastRecorded !== currentDay) {
+    localStorage.setItem("farmlink-last-recorded-date", currentDay);
+    state.page === "consumer" ? renderConsumer() : renderFarmer();
+    showToast(t("dayAdvancedToast", { date: currentDay }));
+  }
+}
+
+function advanceToNextDay() {
+  const newOffset = getDayOffset() + 1;
+  localStorage.setItem("farmlink-day-offset", newOffset);
+  const newDateKey = effectiveTodayKey();
+  localStorage.setItem("farmlink-last-recorded-date", newDateKey);
+  state.page === "consumer" ? renderConsumer() : renderFarmer();
+  showToast(t("dayAdvancedToast", { date: newDateKey }));
 }
 
 function applyLanguage() {
   document.documentElement.lang = state.language;
   $$(".languageSelect").forEach((select) => { select.value = state.language; });
   $$(".languageSelect").forEach((select) => {
-    const labels = { en: "English", hi: "\u0939\u093f\u0902\u0926\u0940", mr: "\u092e\u0930\u093e\u0920\u0940" };
+    const labels = { en: "English", hi: "हिंदी", mr: "मराठी" };
     [...select.options].forEach((option) => { option.textContent = labels[option.value]; });
   });
   $$("[data-i18n]").forEach((node) => { node.textContent = t(node.dataset.i18n); });
   $$("[data-i18n-placeholder]").forEach((node) => { node.placeholder = t(node.dataset.i18nPlaceholder); });
   renderAreaSelect();
+  renderSignupAreaSelect();
   renderCategorySelects();
   renderUnitSelects();
+  renderUserBadge();
   if (state.page === "consumer") renderConsumer();
   if (state.page === "farmer") renderFarmer();
 }
@@ -561,61 +802,76 @@ function applyLanguage() {
 function renderAreaSelect() {
   const select = $("#areaSelect");
   if (!select) return;
-  select.innerHTML = areas.map((area) => `<option value="${area.value}">${repairText(area[state.language])}</option>`).join("");
+  select.innerHTML = areas.map((area) => `<option value="${area.value}">${repairText(area[state.language] || area.en)}</option>`).join("");
   select.value = state.area;
 }
 
-function syncAuth() {
-  if (state.page === "farmer" && state.accountId) {
-    let changed = false;
-    products.forEach((product) => {
-      if (!product.farmerId && product.farmer === displayAccount(state.accountId)) {
-        product.farmerId = state.accountId;
-        changed = true;
-      }
-    });
-    if (changed) saveData();
+function renderSignupAreaSelect() {
+  $$(".signupAreaSelect").forEach((select) => {
+    select.innerHTML = areas.map((area) => `<option value="${area.value}">${repairText(area[state.language] || area.en)}</option>`).join("");
+  });
+}
+
+function renderUserBadge() {
+  const chip = $("#userChip");
+  if (!chip) return;
+  if (!state.isLoggedIn || !state.accountId) {
+    chip.style.display = "none";
+    return;
   }
+  const user = getCurrentUser();
+  const displayName = user ? (user.farmName || user.name) : state.accountId;
+  const avatar = user?.avatar || (state.page === "farmer" ? "👨‍🌾" : "🛒");
+
+  chip.style.display = "flex";
+  const avatarNode = chip.querySelector(".user-chip-avatar");
+  if (avatarNode) avatarNode.textContent = avatar;
+  const nameNode = $("#userChipName");
+  if (nameNode) nameNode.textContent = displayName;
+  const emailNode = $("#userChipEmail");
+  if (emailNode) emailNode.textContent = state.accountId;
+}
+
+function syncAuth() {
   document.body.classList.toggle("logged-in", state.isLoggedIn);
+  renderUserBadge();
+  const user = getCurrentUser();
+  if (user && user.area) {
+    state.area = user.area;
+    const areaSelect = $("#areaSelect");
+    if (areaSelect) areaSelect.value = state.area;
+  }
 }
 
-function normalizeAccount(value) {
-  return String(value || "").trim().toLowerCase();
-}
-
-function displayAccount(value) {
-  const text = String(value || "").trim();
-  return text || "Your Farm";
-}
-
+// Data isolation helpers
 function isCurrentFarmerProduct(product) {
   if (state.page !== "farmer") return true;
   if (!state.accountId) return false;
-  return product.farmerId === state.accountId;
+  return normalizeEmail(product.farmerId) === normalizeEmail(state.accountId);
 }
 
 function isCurrentFarmerOrder(order) {
   if (state.page !== "farmer") return true;
   if (!state.accountId) return false;
-  return order.farmerId === state.accountId;
+  return normalizeEmail(order.farmerId) === normalizeEmail(state.accountId);
 }
 
 function isCurrentFarmerNegotiation(offer) {
   if (state.page !== "farmer") return true;
   if (!state.accountId) return false;
-  return offer.farmerId === state.accountId;
+  return normalizeEmail(offer.farmerId) === normalizeEmail(state.accountId);
 }
 
 function isCurrentConsumerOrder(order) {
   if (state.page !== "consumer") return true;
   if (!state.accountId) return false;
-  return order.buyerId === state.accountId;
+  return normalizeEmail(order.buyerId) === normalizeEmail(state.accountId);
 }
 
 function isCurrentConsumerNegotiation(offer) {
   if (state.page !== "consumer") return true;
   if (!state.accountId) return false;
-  return offer.buyerId === state.accountId;
+  return normalizeEmail(offer.buyerId) === normalizeEmail(state.accountId);
 }
 
 function visibleOrdersFor(mode) {
@@ -664,7 +920,7 @@ function nearbyProducts() {
 function productCard(product, mode) {
   const actions = mode === "consumer"
     ? `<label class="quantity-field"><span>${t("quantityToBuy")}</span><input type="number" min="1" max="${product.stock}" value="1" data-qty-for="${product.id}" /></label><label class="quantity-field"><span>${t("offerAmount")}</span><input type="number" min="1" value="${Math.max(1, product.price - 1)}" data-offer-for="${product.id}" /></label><button type="button" data-negotiate="${product.id}">${t("negotiate")}</button><button class="pay" type="button" data-order="${product.id}">${t("placeOrder")}</button>`
-    : `<button type="button">${t("receivePayment")}</button>`;
+    : `<span class="badge">${product.stock} ${t(product.unit)} ${t("available")}</span>`;
   const photo = product.photo
     ? `<img class="product-photo" src="${product.photo}" alt="${t(product.nameKey || product.name)}" />`
     : `<div class="product-photo placeholder">${t(product.category)}</div>`;
@@ -688,17 +944,29 @@ function productCard(product, mode) {
   `;
 }
 
-function orderCard(order, mode) {
-  const farmerActions = mode === "farmer"
-    ? `<button type="button" data-accept="${order.id}">${t("acceptOrder")}</button><button type="button" data-reject="${order.id}">${t("rejectOrder")}</button><button class="pay" type="button" data-paid="${order.id}">${t("markPaid")}</button>`
-    : "";
+function orderCard(order, mode, isHistory = false) {
+  let farmerActions = "";
+  if (mode === "farmer") {
+    if (order.status === "placed") {
+      farmerActions = `<button type="button" data-accept="${order.id}">${t("acceptOrder")}</button><button type="button" data-reject="${order.id}">${t("rejectOrder")}</button>`;
+    } else if (order.status === "accepted") {
+      farmerActions = `<button class="pay" type="button" data-paid="${order.id}">${t("markPaid")}</button>`;
+    }
+  }
+
+  const isTodayOrder = isEffectiveToday(order.createdAt);
+  const dateBadge = `<span class="date-badge ${isTodayOrder ? 'today' : 'past'}">${isTodayOrder ? t("today") : formatOrderDate(order.createdAt)}</span>`;
+
   return `
     <article class="order-card">
       <div class="order-top">
         <div>
-          <h3>#${order.id} ${t(order.itemKey || order.item)}</h3>
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+            <h3>#${order.id} ${t(order.itemKey || order.item)}</h3>
+            ${dateBadge}
+          </div>
           <p class="meta">
-            <span>${t("buyer")}: ${order.buyer}</span>
+            <span>${t("buyer")}: ${order.buyer} (${order.buyerId})</span>
             <span>${t("farmer")}: ${order.farmer}</span>
             <span>${t("qty")}: ${order.qty} ${t(order.unit)}</span>
           </p>
@@ -706,7 +974,7 @@ function orderCard(order, mode) {
         <span class="badge">${t(order.status)}</span>
       </div>
       <strong>${money(order.total)}</strong>
-      <div class="card-actions">${farmerActions}</div>
+      ${farmerActions ? `<div class="card-actions">${farmerActions}</div>` : ""}
     </article>
   `;
 }
@@ -748,57 +1016,68 @@ function renderConsumer() {
   const visible = nearbyProducts();
   const list = $("#productList");
   if ($("#sellerCount")) $("#sellerCount").textContent = new Set(visible.map((product) => product.farmer)).size;
-  $("#distanceLabel").textContent = `${state.distance} km`;
-  list.innerHTML = visible.length ? visible.map((product) => productCard(product, "consumer")).join("") : `<article class="product-card"><strong>${t("noProducts", { distance: state.distance })}</strong></article>`;
+  if ($("#distanceLabel")) $("#distanceLabel").textContent = `${state.distance} km`;
+  if (list) {
+    list.innerHTML = visible.length ? visible.map((product) => productCard(product, "consumer")).join("") : `<article class="product-card"><strong>${t("noProducts", { distance: state.distance })}</strong></article>`;
+  }
   renderOrders("consumer");
-  renderDailyUpdates("consumer");
   renderNegotiations();
   renderPaymentOptions();
 }
 
 function renderOrders(mode) {
-  const list = $("#orderList");
-  if (!list) return;
   const visible = visibleOrdersFor(mode);
-  if ($("#orderCount")) $("#orderCount").textContent = `${visible.length} ${t("active")}`;
-  list.innerHTML = visible.length ? visible.map((order) => orderCard(order, mode)).join("") : `<article class="order-card"><strong>${t("noOrders")}</strong></article>`;
-}
 
-function renderDailyUpdates(mode) {
-  if (mode === "consumer") {
-    const list = $("#acceptedTodayList");
-    if (!list) return;
-    const accepted = visibleOrdersFor("consumer").filter((order) => order.status === "accepted" && isToday(order.acceptedAt));
-    if ($("#acceptedTodayCount")) $("#acceptedTodayCount").textContent = `${accepted.length} ${t("active")}`;
-    list.innerHTML = accepted.length ? accepted.map((order) => orderCard(order, "consumer")).join("") : `<article class="order-card"><strong>${t("noAcceptedToday")}</strong></article>`;
-    return;
+  // 1. HOME PAGE ORDERS: ONLY TODAY'S ORDERS
+  const todayOrders = visible.filter((order) => isEffectiveToday(order.createdAt));
+  const todayList = $("#orderList");
+  if (todayList) {
+    todayList.innerHTML = todayOrders.length
+      ? todayOrders.map((order) => orderCard(order, mode, false)).join("")
+      : `<article class="order-card"><strong>${t("noTodayOrders")}</strong></article>`;
   }
 
-  const list = $("#paidTodayList");
-  if (!list) return;
-  const paid = visibleOrdersFor("farmer").filter((order) => order.status === "paid" && isToday(order.paidAt));
-  if ($("#paidTodayCount")) $("#paidTodayCount").textContent = `${paid.length} ${t("active")}`;
-  list.innerHTML = paid.length ? paid.map((order) => orderCard(order, "farmer")).join("") : `<article class="order-card"><strong>${t("noPaidToday")}</strong></article>`;
+  // 2. ORDER HISTORY: PREVIOUS ORDERS
+  const historyOrders = visible.filter((order) => !isEffectiveToday(order.createdAt));
+  const historyCountBadge = $("#historyOrderCount");
+  if (historyCountBadge) historyCountBadge.textContent = historyOrders.length;
+
+  const filteredHistory = state.historyStatusFilter === "all"
+    ? historyOrders
+    : historyOrders.filter((order) => order.status === state.historyStatusFilter);
+
+  const historyList = $("#historyOrderList");
+  if (historyList) {
+    historyList.innerHTML = filteredHistory.length
+      ? filteredHistory.map((order) => orderCard(order, mode, true)).join("")
+      : `<article class="order-card"><strong>${t("noHistoryOrders")}</strong></article>`;
+  }
+
+  const historyTotal = historyOrders.reduce((sum, order) => sum + (order.total || 0), 0);
+  const historyTotalNode = $("#historyTotalAmount");
+  if (historyTotalNode) historyTotalNode.textContent = money(historyTotal);
 }
 
 function renderPaymentOptions() {
   const select = $("#paymentOrderSelect");
   if (!select) return;
-  const visible = visibleOrdersFor("consumer");
+  // Show only unpaid and non-rejected orders placed by this consumer
+  const visible = visibleOrdersFor("consumer").filter((order) => order.status !== "paid" && order.status !== "rejected");
   if (!visible.length) {
     select.innerHTML = `<option value="">${t("chooseOrder")}</option>`;
-    $("#paymentAmount").textContent = money(0);
+    if ($("#paymentAmount")) $("#paymentAmount").textContent = money(0);
     return;
   }
-  select.innerHTML = visible.map((order) => `<option value="${order.id}">#${order.id} ${t(order.itemKey || order.item)} - ${money(order.total)}</option>`).join("");
+  select.innerHTML = visible.map((order) => `<option value="${order.id}">#${order.id} ${t(order.itemKey || order.item)} - ${money(order.total)} (${t(order.status)})</option>`).join("");
   const selected = visible.find((order) => String(order.id) === select.value) || visible[0];
-  $("#paymentAmount").textContent = selected ? money(selected.total) : money(0);
+  if ($("#paymentAmount")) $("#paymentAmount").textContent = selected ? money(selected.total) : money(0);
 }
 
 function renderNegotiations() {
   const list = $("#negotiationList");
   if (!list) return;
-  const visible = visibleNegotiationsFor(state.page);
+  // Only today's negotiations active on home page
+  const visible = visibleNegotiationsFor(state.page).filter((n) => !n.createdAt || isEffectiveToday(n.createdAt));
   if ($("#negotiationCount")) $("#negotiationCount").textContent = `${visible.length} ${t("active")}`;
   list.innerHTML = visible.length ? visible.map(negotiationCard).join("") : `<article class="order-card"><strong>${t("noNegotiations")}</strong></article>`;
 }
@@ -806,48 +1085,226 @@ function renderNegotiations() {
 function renderFarmer() {
   const own = products.filter(isCurrentFarmerProduct);
   if ($("#productCount")) $("#productCount").textContent = t("productCount", { count: own.length });
-  $("#farmerProductList").innerHTML = own.length ? own.map((product) => productCard(product, "farmer")).join("") : `<article class="product-card"><strong>${t("noFarmerProducts")}</strong></article>`;
+  const farmerProductList = $("#farmerProductList");
+  if (farmerProductList) {
+    farmerProductList.innerHTML = own.length ? own.map((product) => productCard(product, "farmer")).join("") : `<article class="product-card"><strong>${t("noFarmerProducts")}</strong></article>`;
+  }
   renderOrders("farmer");
-  renderDailyUpdates("farmer");
   renderNegotiations();
   const farmerOrders = visibleOrdersFor("farmer");
-  const received = farmerOrders.filter((order) => order.status === "paid").reduce((sum, order) => sum + order.total, 0);
-  const pending = farmerOrders.filter((order) => order.status !== "paid").reduce((sum, order) => sum + order.total, 0);
-  if ($("#receivedToday")) $("#receivedToday").textContent = money(received);
-  if ($("#pendingAmount")) $("#pendingAmount").textContent = money(pending);
+  // Received Today & Pending Today
+  const receivedToday = farmerOrders.filter((order) => order.status === "paid" && isEffectiveToday(order.paidAt || order.createdAt)).reduce((sum, order) => sum + order.total, 0);
+  const pendingToday = farmerOrders.filter((order) => order.status !== "paid" && order.status !== "rejected" && isEffectiveToday(order.createdAt)).reduce((sum, order) => sum + order.total, 0);
+  if ($("#receivedToday")) $("#receivedToday").textContent = money(receivedToday);
+  if ($("#pendingAmount")) $("#pendingAmount").textContent = money(pendingToday);
+
+  const currentUser = getCurrentUser();
+  if (currentUser) {
+    const accInput = $("#settlementAccountInput");
+    const upiInput = $("#upiIdInput");
+    if (accInput) accInput.value = currentUser.settlementAccount || "";
+    if (upiInput) upiInput.value = currentUser.upiId || "";
+  }
+}
+
+function loginUser(email, password) {
+  const cleanEmail = normalizeEmail(email);
+  if (!isValidEmail(cleanEmail)) {
+    showAuthAlert(t("emailInvalid"));
+    return false;
+  }
+  const user = findUser(cleanEmail);
+  if (!user) {
+    showAuthAlert(t("emailNotFound"));
+    return false;
+  }
+  if (user.password && user.password !== password) {
+    showAuthAlert(t("passwordIncorrect"));
+    return false;
+  }
+
+  state.accountId = cleanEmail;
+  state.isLoggedIn = true;
+  if (user.area) state.area = user.area;
+  localStorage.setItem(`farmlink-${state.page}-logged-in`, "true");
+  localStorage.setItem(`farmlink-${state.page}-account`, cleanEmail);
+  hideAuthAlert();
+  syncAuth();
+  state.page === "consumer" ? renderConsumer() : renderFarmer();
+  showToast(`${t("loginSuccess")} ${user.name || cleanEmail}`);
+  return true;
+}
+
+function registerUser(details) {
+  const cleanEmail = normalizeEmail(details.email);
+  if (!isValidEmail(cleanEmail)) {
+    showAuthAlert(t("emailInvalid"));
+    return false;
+  }
+  if (!details.password || details.password.length < 4) {
+    showAuthAlert(t("passwordMinLength"));
+    return false;
+  }
+  if (!details.name || !details.name.trim()) {
+    showAuthAlert(t("nameRequired"));
+    return false;
+  }
+  const existing = findUser(cleanEmail);
+  if (existing) {
+    showAuthAlert(t("emailAlreadyExists"));
+    return false;
+  }
+
+  const role = state.page === "farmer" ? "farmer" : "consumer";
+  const newUser = {
+    email: cleanEmail,
+    password: details.password,
+    role,
+    name: details.name.trim(),
+    farmName: role === "farmer" ? details.name.trim() : "",
+    area: details.area || state.area || "sinnar",
+    phone: details.phone ? details.phone.trim() : "",
+    avatar: role === "farmer" ? "👨‍🌾" : "🛒",
+    settlementAccount: role === "farmer" ? `${details.name.trim()} - Bank Account` : "",
+    upiId: role === "farmer" ? `${cleanEmail.split("@")[0]}@upi` : ""
+  };
+
+  users.push(newUser);
+  saveUsers();
+
+  state.accountId = cleanEmail;
+  state.isLoggedIn = true;
+  state.area = newUser.area;
+  localStorage.setItem(`farmlink-${state.page}-logged-in`, "true");
+  localStorage.setItem(`farmlink-${state.page}-account`, cleanEmail);
+  hideAuthAlert();
+  syncAuth();
+  state.page === "consumer" ? renderConsumer() : renderFarmer();
+  showToast(t("accountCreated", { name: newUser.name }));
+  return true;
+}
+
+function logoutUser() {
+  state.isLoggedIn = false;
+  state.accountId = "";
+  localStorage.removeItem(`farmlink-${state.page}-logged-in`);
+  localStorage.removeItem(`farmlink-${state.page}-account`);
+  syncAuth();
+  showToast(t("logoutSuccess"));
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function resetAllData() {
+  products.splice(0, products.length);
+  orders.splice(0, orders.length);
+  negotiations.splice(0, negotiations.length);
+  localStorage.removeItem("farmlink-day-offset");
+  localStorage.removeItem("farmlink-last-recorded-date");
+  saveData();
+  state.page === "consumer" ? renderConsumer() : renderFarmer();
+  renderUserBadge();
+  showToast(t("resetDone"));
+}
+
+function switchToSignUp() {
+  $("#tabSignUp")?.classList.add("active");
+  $("#tabSignIn")?.classList.remove("active");
+  if ($("#signupForm")) $("#signupForm").style.display = "grid";
+  if ($("#loginForm")) $("#loginForm").style.display = "none";
+  hideAuthAlert();
+}
+
+function switchToSignIn() {
+  $("#tabSignIn")?.classList.add("active");
+  $("#tabSignUp")?.classList.remove("active");
+  if ($("#loginForm")) $("#loginForm").style.display = "grid";
+  if ($("#signupForm")) $("#signupForm").style.display = "none";
+  hideAuthAlert();
+}
+
+function switchOrderView(tab) {
+  state.orderViewTab = tab;
+  const isToday = tab === "today";
+  $("#tabTodayOrders")?.classList.toggle("active", isToday);
+  $("#tabHistoryOrders")?.classList.toggle("active", !isToday);
+  const todayView = $("#todayOrdersView");
+  const historyView = $("#historyOrdersView");
+  if (todayView) todayView.style.display = isToday ? "block" : "none";
+  if (historyView) historyView.style.display = isToday ? "none" : "block";
 }
 
 function bindEvents() {
+  // Tabs: Sign In / Create Account
+  $("#tabSignIn")?.addEventListener("click", switchToSignIn);
+  $("#tabSignUp")?.addEventListener("click", switchToSignUp);
+  $("#linkToSignUp")?.addEventListener("click", switchToSignUp);
+  $("#linkToSignIn")?.addEventListener("click", switchToSignIn);
+
+  // Tabs: Today's Orders / Order History
+  $("#tabTodayOrders")?.addEventListener("click", () => switchOrderView("today"));
+  $("#tabHistoryOrders")?.addEventListener("click", () => switchOrderView("history"));
+
+  // Order History Filter
+  $("#historyStatusFilter")?.addEventListener("change", (e) => {
+    state.historyStatusFilter = e.target.value;
+    renderOrders(state.page);
+  });
+
+  // Next Day Simulation button
+  $("#advanceDayBtn")?.addEventListener("click", advanceToNextDay);
+
+  // Password visibility toggle
+  $$(".toggle-password").forEach((button) => {
+    button.addEventListener("click", () => {
+      const targetId = button.dataset.target;
+      const input = document.getElementById(targetId);
+      if (input) {
+        if (input.type === "password") {
+          input.type = "text";
+          button.textContent = "🙈";
+        } else {
+          input.type = "password";
+          button.textContent = "👁️";
+        }
+      }
+    });
+  });
+
+  // Sign In Form Submit
   $("#loginForm")?.addEventListener("submit", (event) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
-    state.accountId = normalizeAccount(form.get("identity"));
-    state.isLoggedIn = true;
-    localStorage.setItem(`farmlink-${state.page}-logged-in`, "true");
-    localStorage.setItem(`farmlink-${state.page}-account`, state.accountId);
-    syncAuth();
-    state.page === "consumer" ? renderConsumer() : renderFarmer();
-    showToast(t("loginSuccess"));
+    const email = form.get("email") || form.get("identity");
+    const password = form.get("password");
+    loginUser(email, password);
   });
 
-  $("#logoutBtn")?.addEventListener("click", () => {
-    state.isLoggedIn = false;
-    state.accountId = "";
-    localStorage.removeItem(`farmlink-${state.page}-logged-in`);
-    localStorage.removeItem(`farmlink-${state.page}-account`);
-    syncAuth();
-    showToast(t("logoutSuccess"));
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  // Sign Up Form Submit
+  $("#signupForm")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    registerUser({
+      name: form.get("name"),
+      email: form.get("email"),
+      password: form.get("password"),
+      area: form.get("area"),
+      phone: form.get("phone")
+    });
   });
 
-  $("#resetDataBtn")?.addEventListener("click", () => {
-    products.splice(0, products.length);
-    orders.splice(0, orders.length);
-    negotiations.splice(0, negotiations.length);
-    saveData();
-    state.page === "consumer" ? renderConsumer() : renderFarmer();
-    showToast(t("resetDone"));
+  // Header Switch Account & Logout buttons
+  $("#switchUserBtn")?.addEventListener("click", () => {
+    logoutUser();
+    const loginEmail = $("#loginEmail");
+    if (loginEmail) {
+      loginEmail.value = "";
+      loginEmail.focus();
+    }
   });
+
+  $("#logoutBtn")?.addEventListener("click", logoutUser);
+
+  $("#resetDataBtn")?.addEventListener("click", resetAllData);
 
   $$(".languageSelect").forEach((select) => {
     select.addEventListener("change", (event) => {
@@ -859,6 +1316,11 @@ function bindEvents() {
 
   $("#areaSelect")?.addEventListener("change", (event) => {
     state.area = event.target.value;
+    const currentUser = getCurrentUser();
+    if (currentUser) {
+      currentUser.area = state.area;
+      saveUsers();
+    }
     state.page === "consumer" ? renderConsumer() : renderFarmer();
   });
 
@@ -894,32 +1356,36 @@ function bindEvents() {
 
   $("#paymentForm")?.addEventListener("submit", (event) => {
     event.preventDefault();
-    const order = orders.find((item) => String(item.id) === $("#paymentOrderSelect").value);
+    const orderId = $("#paymentOrderSelect").value;
+    const order = orders.find((item) => String(item.id) === orderId);
     if (order) {
       order.status = "paid";
       order.paidAt = nowIso();
+      saveData();
+      renderConsumer();
+      showToast(t("paymentDone"));
     }
-    saveData();
-    renderConsumer();
-    showToast(t("paymentDone"));
   });
 
   $("#productForm")?.addEventListener("submit", async (event) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const photo = await readFileAsDataUrl(form.get("photo"));
+    const user = getCurrentUser();
+    const farmerName = user ? (user.farmName || user.name) : displayAccount(state.accountId);
     products.unshift({
       id: Date.now(),
       name: form.get("name"),
       category: form.get("category"),
-      farmer: displayAccount(state.accountId),
+      farmer: farmerName,
       farmerId: state.accountId,
       price: Number(form.get("price")),
       unit: form.get("unit"),
       stock: Number(form.get("stock")),
       distance: Number(form.get("distance")),
       area: state.area,
-      photo
+      photo: photo || "",
+      createdAt: nowIso()
     });
     saveData();
     event.currentTarget.reset();
@@ -931,7 +1397,15 @@ function bindEvents() {
 
   $("#settlementForm")?.addEventListener("submit", (event) => {
     event.preventDefault();
-    showToast(t("settlementRequested"));
+    const user = getCurrentUser();
+    if (user) {
+      const accInput = $("#settlementAccountInput");
+      const upiInput = $("#upiIdInput");
+      if (accInput) user.settlementAccount = accInput.value.trim();
+      if (upiInput) user.upiId = upiInput.value.trim();
+      saveUsers();
+    }
+    showToast(t("settlementSaved"));
   });
 
   document.addEventListener("click", (event) => {
@@ -957,11 +1431,13 @@ function bindEvents() {
         showToast(t("quantityExceedsStock"));
         return;
       }
+      const buyerUser = getCurrentUser();
+      const buyerName = buyerUser ? buyerUser.name : state.accountId;
       orders.unshift({
         id: Date.now().toString().slice(-5),
         item: product.name,
         itemKey: product.nameKey,
-        buyer: displayAccount(state.accountId),
+        buyer: buyerName,
         buyerId: state.accountId,
         farmer: product.farmer,
         farmerId: product.farmerId,
@@ -993,18 +1469,21 @@ function bindEvents() {
         return;
       }
       const offerPrice = Math.max(1, Number.isFinite(requestedOffer) ? requestedOffer : product.price);
+      const buyerUser = getCurrentUser();
+      const buyerName = buyerUser ? buyerUser.name : state.accountId;
       negotiations.unshift({
         id: Date.now().toString().slice(-5),
         item: product.name,
         itemKey: product.nameKey,
-        buyer: displayAccount(state.accountId),
+        buyer: buyerName,
         buyerId: state.accountId,
         farmer: product.farmer,
         farmerId: product.farmerId,
         qty,
         unit: product.unit,
         offerPrice,
-        productId: product.id
+        productId: product.id,
+        createdAt: nowIso()
       });
       saveData();
       renderConsumer();
@@ -1131,14 +1610,27 @@ function bindEvents() {
   });
 
   window.addEventListener("storage", (event) => {
-    if (event.key !== "farmlink-products" && event.key !== "farmlink-orders" && event.key !== "farmlink-negotiations") return;
-    products.splice(0, products.length, ...loadStoredList("farmlink-products"));
-    orders.splice(0, orders.length, ...loadStoredList("farmlink-orders"));
-    negotiations.splice(0, negotiations.length, ...loadStoredList("farmlink-negotiations"));
+    if (event.key === "farmlink-users") {
+      users.splice(0, users.length, ...loadStoredList("farmlink-users"));
+    }
+    if (event.key === "farmlink-products") {
+      products.splice(0, products.length, ...loadStoredList("farmlink-products"));
+    }
+    if (event.key === "farmlink-orders") {
+      orders.splice(0, orders.length, ...loadStoredList("farmlink-orders"));
+    }
+    if (event.key === "farmlink-negotiations") {
+      negotiations.splice(0, negotiations.length, ...loadStoredList("farmlink-negotiations"));
+    }
+    renderUserBadge();
     state.page === "consumer" ? renderConsumer() : renderFarmer();
   });
+
+  // Check rollover every 30 seconds
+  window.setInterval(checkDayRollover, 30000);
 }
 
 bindEvents();
 syncAuth();
 applyLanguage();
+checkDayRollover();
