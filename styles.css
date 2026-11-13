@@ -163,6 +163,68 @@ input, select {
   font-weight: 600;
 }
 
+.site-switch-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.88rem;
+  background: var(--mint);
+  color: var(--leaf);
+  border: 1px solid #b7ddc7;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.site-switch-link:hover {
+  background: #c7ead5;
+  transform: translateY(-1px);
+}
+.site-switch-link.home-link {
+  background: #f4f6f4;
+  color: var(--soil);
+  border-color: var(--line);
+}
+.site-switch-link.home-link:hover {
+  background: #e8ece8;
+}
+
+.portal-crosslink-box {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: #f4faf6;
+  border: 1px solid #c7ead5;
+  border-radius: 8px;
+  text-align: center;
+  display: grid;
+  gap: 6px;
+}
+.portal-crosslink-box span {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+.portal-crosslink-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--leaf);
+  color: var(--white);
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 0.86rem;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.portal-crosslink-btn:hover {
+  background: #17633e;
+}
+
 .site-badge {
   display: grid;
   min-height: 42px;
